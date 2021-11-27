@@ -57,7 +57,7 @@ rc::Changes rc::Warning_Collection::compare_changes(const rc::Warning_Collection
 
 		}
 		else {
-			extra_warning_it++;
+			++extra_warning_it;
 		}
 
 	}
