@@ -12,12 +12,7 @@ namespace rc {
 
 	public:
 
-		Warning() = default;
-		Warning(const Warning&) = default;
-		Warning(Warning&&) = default;
-		Warning& operator=(const Warning&) = default;
-		Warning& operator=(Warning&&) = default;
-		~Warning() = default;
+		using rc::JSONObject::JSONObject;
 
 		Warning(const rc::JSONObject& obj);
 		Warning(rc::JSONObject&& obj);
@@ -29,8 +24,11 @@ namespace rc {
 		Warning& operator=(const nlohmann::json& obj);
 		Warning& operator=(nlohmann::json&& obj);
 
-		bool operator==(const rc::Warning& warning) const noexcept;
+		bool is_same(const Warning& warning) const noexcept;
+		bool same_position(const Warning& warning) const noexcept;
 
 	};
 
 }
+
+bool operator==(const rc::Warning& warning1, const rc::Warning& warning2) noexcept;

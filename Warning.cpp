@@ -42,40 +42,20 @@ rc::Warning& rc::Warning::operator=(nlohmann::json&& json) {
 
 }
 
-bool rc::Warning::operator==(const rc::Warning& warning) const noexcept {
+bool rc::Warning::is_same (const rc::Warning& warning) const noexcept {
 
-	return ((this->m_navigation == warning.m_navigation) && (this->get_json() == warning.get_json()));
-
-}
-
-/*rc::Warning::Warning(const nlohmann::json& json)
-	: m_json(json) {}
-
-rc::Warning::Warning(nlohmann::json&& json) noexcept
-	: m_json(std::move(json)) {}
-
-rc::Warning& rc::Warning::operator=(const nlohmann::json& json) {
-
-	this->m_json = json;
-	return *this;
+	return (this->get_json() == warning.get_json());
 
 }
 
-rc::Warning& rc::Warning::operator=(nlohmann::json&& json) {
+bool rc::Warning::same_position(const rc::Warning& warning) const noexcept {
 
-	this->m_json = std::move(json);
-	return *this;
-
-}
-
-bool rc::Warning::operator==(const Warning& war) noexcept {
-
-	return (this->m_json == war.m_json);
+	return (this->m_navigation == warning.m_navigation);
 
 }
 
-bool rc::Warning::operator==(const nlohmann::json& json) noexcept {
+bool operator==(const rc::Warning& warning1, const rc::Warning& warning2) noexcept {
 
-	return (this->m_json == json);
+	return (warning1.is_same(warning2));
 
-}*/
+}
