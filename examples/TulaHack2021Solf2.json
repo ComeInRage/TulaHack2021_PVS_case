@@ -1,0 +1,83 @@
+{
+  "version": 2,
+  "warnings": [
+    {
+      "code": "V575",
+      "cwe": 628,
+      "sastId": "CE",
+      "level": 1,
+      "positions": [
+        {
+          "file": "sdf",
+          "line": 244,
+          "endLine": 244,
+          "column": 1,
+          "endColumn": 2147483647,
+          "navigation": {
+            "previousLine": 123,
+            "currentLine": -793696879,
+            "nextLine": 125,
+            "columns": 0
+          }
+        }
+      ],
+      "projects": [
+        "DLLTester"
+      ],
+      "message": "The null pointer is passed into 'wcstok' function. Inspect the third argument.",
+      "favorite": false,
+      "falseAlarm": false
+    },
+    {
+      "code": "V575",
+      "cwe": 628,
+      "sastId": "CERT-EXP37-C",
+      "level": 1,
+      "positions": [
+        {
+          "file": "E:\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt\\corecrt_wstring.h",
+          "line": 258,
+          "endLine": 258,
+          "column": 1,
+          "endColumn": 2147483647,
+          "navigation": {
+            "previousLine": 123,
+            "currentLine": -793696879,
+            "nextLine": 125,
+            "columns": 0
+          }
+        }
+      ],
+      "projects": [
+        "DLLTester"
+      ],
+      "message": "The null pointer is passed into 'wcstok' function. Inspect the third argument.",
+      "favorite": false,
+      "falseAlarm": false
+    },
+    {
+      "code": "Renew",
+      "cwe": 0,
+      "level": 1,
+      "positions": [
+        {
+          "file": "",
+          "line": 1,
+          "endLine": 1,
+          "column": 1,
+          "endColumn": 2147483647,
+          "navigation": {
+            "previousLine": 0,
+            "currentLine": 0,
+            "nextLine": 0,
+            "columns": 0
+          }
+        }
+      ],
+      "projects": [],
+      "message": "Yo.com. This is an information message. You can continue using the analyzer with your current license.",
+      "favorite": false,
+      "falseAlarm": false
+    }
+  ]
+}
