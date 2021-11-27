@@ -9,8 +9,8 @@ namespace js = nlohmann;
 
 int main() {
 
-	std::ifstream stream("TulaHack2021Sol.json");
-	std::ifstream stream2("TulaHack2021Sol2.json");
+	std::ifstream stream("report.json");
+	std::ifstream stream2("report_new.json");
 	rc::Warning_Collection standard( js::json::parse(stream)["warnings"] );
 	rc::Warning_Collection warns( js::json::parse(stream2)["warnings"] );
 
@@ -34,6 +34,8 @@ int main() {
 
 	std::cout << "Changed:" << std::endl;
 	for (const auto& warning_pair : changes.changed_warnings) {
+
+		// Мои глаза...
 
 		auto extra_has_code = warning_pair.first.at_key("code").get<std::string>();
 		auto absent_has_code = warning_pair.second.at_key("code").get<std::string>();
