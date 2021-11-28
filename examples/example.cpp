@@ -20,7 +20,11 @@ int main() {
 	for (const auto& warning : changes.extra_warnings) {
 
 		auto has_code = warning.at_key("code").get<std::string>();
-		std::cout << (has_code ? *has_code : "null") << std::endl;
+		auto has_line_number = warning.at_key("positions").at_key(0).at_key("line").get<int>();
+		auto has_file_path = warning.at_key("positions").at_key(0).at_key("file").get<std::string>();
+		std::cout << "[" << (has_code ? *has_code : "null") << "] line "
+				  << (has_line_number ? *has_line_number : -1) << ": "
+				  << (has_file_path ? *has_file_path : "null_path") << std::endl;
 
 	}
 
@@ -28,7 +32,11 @@ int main() {
 	for (const auto& warning : changes.absent_warnings) {
 
 		auto has_code = warning.at_key("code").get<std::string>();
-		std::cout << (has_code ? *has_code : "null") << std::endl;
+		auto has_line_number = warning.at_key("positions").at_key(0).at_key("line").get<int>();
+		auto has_file_path = warning.at_key("positions").at_key(0).at_key("file").get<std::string>();
+		std::cout << "[" << (has_code ? *has_code : "null") << "] line "
+			<< (has_line_number ? *has_line_number : -1) << ": "
+			<< (has_file_path ? *has_file_path : "null_path") << std::endl;
 
 	}
 
